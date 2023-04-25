@@ -1,25 +1,17 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React from 'react';
+import './SameValueComponent.css';
 
 type SameValueComponentProps = {
   value: string;
+  count: number;
 };
 
 function SameValueComponent(props: SameValueComponentProps) {
-  const [count, setCount] = useState(1);
-  const { value } = props;
-  const prevValue = useRef(value);
-
-  useEffect(() => {
-    if (value !== prevValue.current) {
-      setCount(count + 1);
-      prevValue.current = value;
-    }
-  }, [value, count]);
-
-  const fontSize = 10 + count;
+  const { value, count } = props;
+  const fontSize = 10 * count;
 
   return (
-    <div style={{ fontSize: `${fontSize}px` }}>
+    <div className="same-value-component" style={{ fontSize: `${fontSize}px` }}>
       {value}
     </div>
   );
