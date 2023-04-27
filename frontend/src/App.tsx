@@ -62,6 +62,7 @@ function App() {
         {submittedValues.map((item) => (
           <SameValueComponent key={item.value} value={item.value} count={item.count} />
         ))}
+        {/* keyとvalueが両方item.value　valueが同じ＝文字サイズを大きくする、keyも同じにしないと違うものと見なされる */}
       </div>
       {/* marginBottom を 20px に設定した div 要素。テキストを中央寄せ */}
       <div style={{ marginBottom: '20px', textAlign: 'center' }}>
