@@ -5,6 +5,8 @@ type SameValueComponentProps = {
   value: string;
   count: number;
 };
+// App.tsx <SameValueComponent key={item.value} value={item.value} count={item.count} />と連動
+// keyは不要、目的はreact内部で効率的に探すため。
 
 function SameValueComponent(props: SameValueComponentProps) {
   const { value, count } = props;

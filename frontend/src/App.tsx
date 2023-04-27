@@ -54,18 +54,25 @@ function App() {
   };
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
-      <div style={{ flexGrow: 1 }}>
+    /* 最外部の div 要素。縦方向に子要素を配置し、最低限の高さを 100vh に設定し、子要素を中央寄せ */
+    <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', alignItems: 'center' }}>
+      {/* flexGrow を 1 に設定することで、この div が余白を埋めるように伸びる。テキストを中央寄せ */}
+      <div style={{ flexGrow: 1, textAlign: 'center' }}>
+        {/* submittedValues 配列の要素をループして、SameValueComponent を表示 */}
         {submittedValues.map((item) => (
           <SameValueComponent key={item.value} value={item.value} count={item.count} />
         ))}
       </div>
-      <div style={{ marginBottom: '20px' }}>
+      {/* marginBottom を 20px に設定した div 要素。テキストを中央寄せ */}
+      <div style={{ marginBottom: '20px', textAlign: 'center' }}>
+        {/* テキスト入力フィールド。値が変更されたときに handleInputChange を実行 */}
         <input type="text" value={inputValue} onChange={handleInputChange} />
+        {/* 送信ボタン。クリックされたときに handleSubmit を実行 */}
         <button onClick={handleSubmit}>送信</button>
       </div>
     </div>
   );
+    
 }
 
 export default App;
