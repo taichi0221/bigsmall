@@ -56,12 +56,12 @@ function App() {
   return (
     /* 最外部の div 要素。縦方向に子要素を配置し、最低限の高さを 100vh に設定し、子要素を中央寄せ */
     <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', alignItems: 'center' }}>
-      {/* flexGrow を 1 に設定することで、この div が余白を埋めるように伸びる。テキストを中央寄せ */}
       <div style={{ flexGrow: 1, textAlign: 'center' }}>
-        {/* submittedValues 配列の要素をループして、SameValueComponent を表示 */}
+      {/* flexGrow を 1 に設定することで、この div が余白を埋めるように伸びる。テキストを中央寄せ */}
         {submittedValues.map((item) => (
           <SameValueComponent key={item.value} value={item.value} count={item.count} />
         ))}
+        {/* submittedValues 配列の要素をループして、SameValueComponent を表示 */}
         {/* keyとvalueが両方item.value　valueが同じ＝文字サイズを大きくする、keyも同じにしないと違うものと見なされる */}
       </div>
       {/* marginBottom を 20px に設定した div 要素。テキストを中央寄せ */}
